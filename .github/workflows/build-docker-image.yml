@@ -37,4 +37,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/riscv64
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/sharelter/testing-infra-jumper-docker:latest
