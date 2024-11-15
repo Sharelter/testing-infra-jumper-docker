@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -33,5 +32,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64/v8,linux/riscv64
+          platforms: linux/amd64,linux/arm64/v8
           push: true
+          tags: ghcr.io/sharelter/testing-infra-jumper-docker:latest
