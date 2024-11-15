@@ -36,6 +36,15 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/riscv64
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/sharelter/testing-infra-jumper-docker:latest
+
+      - name: Build and push Docker image for riscv64
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile_riscv64
+          platforms: linux/riscv64
           push: true
           tags: ghcr.io/sharelter/testing-infra-jumper-docker:latest
