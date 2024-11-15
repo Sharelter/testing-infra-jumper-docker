@@ -1,5 +1,5 @@
 # 使用 debian bookworm 作为基础镜像
-FROM debian:12
+FROM debian:latest
 
 # 更新包列表并安装所需的软件包
 RUN apt-get update && apt-get install -y \
