@@ -1,13 +1,12 @@
-name: Build and Push Docker Image
-
-on:
-  push:
-    branches:
+branches:
       - main
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,4 +33,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/sharelter/testing-infra-jumper-docker:main
+          tags: ghcr.io/sharelter/testing-infra-jumper-docker:latest
