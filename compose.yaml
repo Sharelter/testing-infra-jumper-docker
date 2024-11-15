@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  jumper:
+    image: ghcr.io/sharelter/testing-infra-jumper-docker:latest
+    ports:
+      - "6222:22"
